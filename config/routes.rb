@@ -1,4 +1,7 @@
 Quanquan::Application.routes.draw do
+  resources :movies
+
+
   resources :rates
 
 

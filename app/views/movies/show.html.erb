@@ -1,0 +1,47 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @movie.name %>
+</p>
+
+<p>
+  <b>Director:</b>
+  <%= @movie.director %>
+</p>
+
+<p>
+  <b>Actor:</b>
+  <%= @movie.actor %>
+</p>
+
+<p>
+  <b>Release date:</b>
+  <%= @movie.release_date %>
+</p>
+
+<p>
+  <b>Thumb image:</b>
+  <%= @movie.thumb_image %>
+</p>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %> |
+<%= link_to 'Back', movies_path %>
+
+<br>
+<div class="col">
+	
+		<div class="product_unite">
+			<a href=""><img src="/assets/s12620955.jpg" /></a>
+			<!--p>这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述</p-->
+			<ul class="">
+				<li><strong>评分</strong></li>
+				<% @movie.rates.each do |rate| %>
+				<li><%= rate.site %>（<%= rate.rating %>）</li>
+				<% end %>
+			</ul>
+		</div>
+	
+</div>
+

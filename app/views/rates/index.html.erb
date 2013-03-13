@@ -1,29 +1,21 @@
-﻿<h1>Listing rates</h1>
-
-<table>
-  <tr>
-    <th>电影</th>
-    <th>Rating</th>
-    <th>来自</th>
-    
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @rates.each do |rate| %>
-  <tr>
-    <td><%= rate.name %></td>
-    <td><%= rate.rating %></td>
-    <td><%= rate.site %></td>
-    
-    <td><%= link_to 'Show', rate %></td>
-    <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
-    <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+﻿<!--第1列-->
+<div class="col">
+	<% @rates.each do |rate| %>
+		<div class="product_unite">
+			<a href=""><img src="assets/s12620955.jpg" /></a>
+			<!--p>这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述这里应该是文字描述</p-->
+			<ul class="">
+				<li><strong>评分</strong></li>
+				<li><%= rate.rating %>（<%= rate.site %>）</li>
+				<li>8.9（豆瓣电影）</li>
+				<li>8.0（MTime）</li>
+				<li>7.0（M1905）</li>
+				<li>8.0（人人网）</li>
+				<li><%= link_to 'Show', rate %><%= link_to 'Edit', edit_rate_path(rate) %>
+				<%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+			</ul>
+		</div>
+	<% end %>
+</div>
 
 <%= link_to 'New Rate', new_rate_path %>

@@ -1,3 +1,79 @@
-// Place all the styles related to the rates controller here.
+﻿// Place all the styles related to the rates controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+body {background:/*#F0F4E6 #d9e1e5*/#333;}
+ul li {list-style:none;}
+img {border:none;}
+a {color:#333; text-decoration:none;}
+a:hover {text-decoration:underline;}
+.w960 {width:960px; margin:0 auto;}
+.bor {border:1px dashed #999;}
+em {font-style:normal; font-weight:normal;}
+.clear {clear:both;}
+.bg333 {background:#333;}
+
+
+h1, h1 a {font-family:"Microsoft YaHei",STXihei,SimHei,SimSun,Helvetica,serif; font-size:20px; color:#fff;}
+
+/*基本框架样式*/
+/*top部分*/
+#header {/*margin-bottom:10px;*/}
+	.header_nav {height:25px; background:url("../images/top_nav_bg.jpg");}
+	.header_nav ul {height:25px;}
+	.header_nav li {float:left; height:25px; line-height:25px; padding:0 5px;}
+	.header_nav a {color:#ccc;}
+
+	.web_logo {margin-top:10px;}
+	.web_logo h1 {height:75px; line-height:75px; float:left;}
+	.web_logo p {height:75px; line-height:75px; float:left;}
+
+/*主体内容部分*/
+#mainbox {/*background: url("../images/index_bg.jpg") no-repeat scroll center -80px transparent;*/}
+#qoo_body {overflow:hidden; position:relative;}
+.product_type {margin-bottom:30px; background:#fff; border-top:5px solid #333;}
+.product_type_title {overflow:hidden; padding:0 20px 5px 20px; background:#00ff00;}
+.title_name {float:left; width:100px; background:#333; text-align:center;}
+.product_type_nav {float:right; width:104px; height:30px; line-height:30px;}
+.product_type_nav li {float:left; width:50px; padding:1px;}
+.product_type_nav li>a {display:block; background:#fff; text-align:center; font-weight:bold;}
+.product_show {overflow:hidden; padding:10px 20px; position:relative;}
+
+.product_pic {float:left; width:600px;}
+.product_pic img {width:600px;}
+.product_discription {float:right; width:296px;}
+.product_discription h1 a {color:#333; font-size:24px;}
+.product_discription p {padding:10px 0;}
+.go_buy {position:absolute; bottom:10px; right:10px;}
+.go_buy a {display:block; padding:0 10px; border-left:1px solid #ccc; border-top:1px solid #ccc; height:25px; line-height:25px; background:#333; text-align:center; color:#ccc;}
+
+.product_type_title_01 {overflow:hidden; padding:0 20px 5px 20px;}
+.product_box {overflow:hidden; padding:10px 0; position:relative;}
+.product_box img {float:left; width:192px;}
+
+
+/*商品信息列表部分*/
+.feed_col {overflow:hidden; border-top:5px solid #666; background:#fff;}
+	.feed_col .nav_01 {overflow:hidden; margin:0 auto; background:#666;}
+	.feed_col .nav_01 li {float:left; width:50px; height:35px; line-height:35px; padding:0 5px; text-align:center;}
+	.feed_col a {color:#7fff00; font-size:14px; font-weight:bold;}
+	.nav_hover {background:url(../images/hover.png) center; display:block;}
+.type_list_box {margin-top:30px;}
+.col {width:185px; margin-right:8px; overflow:hidden; float:left;}
+.nomargin {margin:0; float:left;}
+.product_unite {padding:15px; margin-bottom:20px; background:#eee; border-bottom:2px solid #b9bdc2;}
+.product_unite img {width:100%;}
+.product_unite p {padding:15px 5px 5px; line-height:18px;}
+.product_unite ul { }
+.product_unite li {padding:3px 0; border-bottom:1px dashed #b9bdc2;}
+
+/*底部版权部分*/
+#footer {overflow:hidden; border-top:5px solid #666;}
+#footer .left {float:left;}
+#footer .right {color:#666; float:right; font-family:'lucida grande',tahoma,helvetica,arial,'bitstream vera sans',sans-serif;}
+
+/*方案04底部部分*/
+.footerbox {background:#333;}

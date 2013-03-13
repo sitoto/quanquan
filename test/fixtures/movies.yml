@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  director: MyString
+  actor: MyString
+  release_date: MyString
+  thumb_image: MyString
+
+two:
+  name: MyString
+  director: MyString
+  actor: MyString
+  release_date: MyString
+  thumb_image: MyString
