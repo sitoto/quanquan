@@ -10,7 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+ <div class="field">
+    <label>Image</label>
+    <%= image_tag(@movie.placard_url) if @movie.placard? %>
+    <%= f.file_field :placard %>
+    <%= f.hidden_field :placard_cache %>
+  </div>
+  <p>
+    <label>
+      <%= f.check_box :remove_placard %>
+      Remove 
+    </label>
+  </p>
+  
+    <p>
+    <label>Remote Image URL:</label>
+    <%= f.text_field :remote_placard_url %>
+  </p>
+  
+  
+  
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>

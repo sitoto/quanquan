@@ -1,4 +1,4 @@
-#encoding: UTF-8
+﻿#encoding: UTF-8
 require 'nokogiri'
 require 'open-uri'
 
@@ -45,11 +45,28 @@ class RatesController < ApplicationController
   # POST /rates.json
   def create
     @rate = Rate.new(params[:rate])
-	m_id = @rate.movie_id
-	url = "http://service.mtime.com/database/databaseService.m?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Community.Controls.CommunityPages.DatabaseService&Ajax_CallBackMethod=LoadData2&Ajax_CrossDomain=1&Ajax_RequestUrl=a&Ajax_CallBackArgument0=1&Ajax_CallBackArgument1=#{m_id}"
-	html = open(url).read
-	str = html.scan(/"rating"\:[0-9 .]*/)[0]
-	@rate.rating =  str.split(":")[1]
+	m_id = @rate.out_num
+	site = @rate.site
+	case site
+	 when "MTime"
+		url = "http://service.mtime.com/database/databaseService.m?Ajax_CallBack=true&Ajax_CallBackType=Mtime.Community.Controls.CommunityPages.DatabaseService&Ajax_CallBackMethod=LoadData2&Ajax_CrossDomain=1&Ajax_RequestUrl=a&Ajax_CallBackArgument0=1&Ajax_CallBackArgument1=#{m_id}"
+		html = open(url).read
+		str = html.scan(/"rating"\:[0-9 .]*/)[0]
+		@rate.rating =  str.split(":")[1] 
+	 when "豆瓣"
+		url = "http://movie.douban.com/subject/#{m_id}/"
+		html = Nokogiri::HTML(open(url).read)
+		@rate.rating =  html.at_css("strong.rating_num").text
+	 when "M1905"
+		url = "http://www.m1905.com/mdb/film/#{m_id}/"
+		html = open(url).read
+		str = html.scan(/var score = \'[0-9 .]*/)[0]
+		@rate.rating =  str.split("'")[1]
+	 else 
+		@rate.rating =  "无"
+	 end  
+	
+	
 
 
     respond_to do |format|

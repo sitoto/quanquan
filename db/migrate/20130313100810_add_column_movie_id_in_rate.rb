@@ -1,6 +1,6 @@
 class AddColumnMovieIdInRate < ActiveRecord::Migration
   def up
-  	add_column :rates, :movie_id, :integer
+  	#add_column :rates, :movie_id, :integer
   end
 
   def down
