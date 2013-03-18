@@ -1,8 +1,14 @@
 class MoviesController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show]
+
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    @movies_0 = Movie.all
+    @movies_1 = Movie.all
+    @movies_2 = Movie.all
+    @movies_3 = Movie.all
+    @movies_4 = Movie.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +86,13 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "quanquan"
+    end
+  end  
 end

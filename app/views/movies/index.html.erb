@@ -1,3 +1,20 @@
+﻿<p>98</p>
+<% 5.times do |i| %>
+	<div class="col">
+		<% @movies_0.each do |movie| %>
+			<div class="product_unite">
+				<a href=""><%= image_tag(movie.placard_url) %></a>
+				<ul class="">
+					<li><strong>评分</strong></li>
+					<% movie.rates.each do |rate| %>
+					<li><%= rate.site %>（<%= rate.rating %>）</li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
 <h1>Listing movies</h1>
 
 <table>
@@ -11,7 +28,7 @@
     <th></th>
   </tr>
 
-<% @movies.each do |movie| %>
+<% @movies_0.each do |movie| %>
   <tr>
     <td><%= movie.name %></td>
     <td><%= movie.director %></td>
@@ -23,7 +40,5 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
 <%= link_to 'New Movie', new_movie_path %>
+<br />
